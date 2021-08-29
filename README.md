@@ -1,6 +1,6 @@
 # Another Among Twerk Mosiac Art GIF Generator
 
-<img src="ass.gif" width="300">
+<img src="hank.gif" width="500">
 
 Decided to make a more accessible version of https://github.com/ThatOneCalculator/Among-Us-Dumpy-Gif-Maker
 (Without downloading any requirements)
@@ -8,9 +8,9 @@ Decided to make a more accessible version of https://github.com/ThatOneCalculato
 Feel free to use this script anywhere
 
 ## Features
-Supports transparent crewmates
+- Supports transparent crewmates
 
-Custom limit of numbers of sussy baka in a row/colume
+- Custom limit of numbers of sussy baka in a row/colume
 
 ## Requirements
 - Python 3 (optional) (For those intending to run the source)
@@ -29,4 +29,4 @@ Example:
 
 Result:
 
-<img src="amog.gif" width="300">
+<img src="amog.gif" width="500">
