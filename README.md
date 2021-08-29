@@ -1,6 +1,6 @@
 # Another Among Twerk Mosiac Art GIF Generator
 
-![ass](ass.gif)
+<img src="ass.gif" width="100">
 
 Decided to make a more accessible version of https://github.com/ThatOneCalculator/Among-Us-Dumpy-Gif-Maker
 (Without downloading any requirements)
@@ -27,4 +27,4 @@ Example:
 `python main.py test/amog.png`
 
 Result:
-![amog](amog.gif)
+<img src="amog.gif" width="100">
