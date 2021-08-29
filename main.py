@@ -1,6 +1,16 @@
-import sys, glob
+import os, sys, glob
 from PIL import Image
 import numpy
+
+# Path of bundled assets (Pyinstaller)
+def bundled_path(relative):
+    try:
+        base = sys._MEIPASS
+    except Exception:
+        
+        # Use default path if no tmp folder is created
+        base = os.path.abspath(".")
+    return os.path.join(base, relative)
 
 # Function for changing transparency level to 0
 def trans(img):
@@ -15,7 +25,7 @@ def twerk(path, size):
     if size is None: size = 50
 
     # Sussy frames & Output location
-    raw = "assets/among_*.png"
+    raw = bundled_path("assets/among_*.png")
     out = "twerk.gif"
 
     # Picture as mosaic pattern
@@ -89,6 +99,7 @@ def twerk(path, size):
 
 if __name__ == "__main__":
     args = sys.argv
+
     if len(args) == 1:
         sys.exit("""Among twerk mosaic art generator 
 (https://github.com/gldanoob/sussy-mosaic)
