@@ -1,6 +1,6 @@
 # Another Among Twerk Mosiac Art GIF Generator
 
-<img src="hank.gif" width="500">
+<img src="hank.gif" width="600">
 
 Decided to make a more accessible version of https://github.com/ThatOneCalculator/Among-Us-Dumpy-Gif-Maker
 (Without downloading any requirements)
@@ -22,9 +22,10 @@ Feel free to use this script anywhere
 
 Generated GIF will be under the file name `twerk.gif` in the same directory as the script
 
-Running the executable:
+### Running the executable:
+    
 
-Building from source:
+### Building from source:
 `python main.py <path-to-image> <max-size=50>`
 
 Example:
@@ -32,4 +33,4 @@ Example:
 
 Result:
 
-<img src="amog.gif" width="500">
+<img src="amog.gif" width="600">
