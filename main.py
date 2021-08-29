@@ -42,8 +42,8 @@ def twerk(path, size):
     # mosaic color array
     colors = [
         [
-            pic.getpixel((x, y)) for x in range(0, width, unit)
-        ] for y in range(0, height, unit)
+            pic.getpixel((x, y)) for x in range(unit // 2, width, unit)
+        ] for y in range(unit // 2, height, unit)
     ]
         
     # List of among twerk images
@@ -65,7 +65,7 @@ def twerk(path, size):
             for x, bright in enumerate(row):
 
                 # Shading color of the ass
-                shade = tuple(v / 2 for v in bright[:-1]) + (bright[-1],)
+                shade = tuple(v * 2 / 3 for v in bright[:-1]) + (bright[-1],)
                 
                 tile = among[(x + y - i) % len(among)].convert("RGBA")
 
