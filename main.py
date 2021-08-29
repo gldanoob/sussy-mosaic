@@ -11,7 +11,9 @@ def trans(img):
     dst.putpalette(p[-3*shift:] + p[:-3*shift])
     return dst
 
-def twerk(path, size=50):
+def twerk(path, size):
+    if size is None: size = 50
+
     # Sussy frames & Output location
     raw = "assets/among_*.png"
     out = "twerk.gif"
