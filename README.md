@@ -1,4 +1,4 @@
-# Another Among Twerk Mosiac Art GIF Generator
+# Another Among Twerk Mosaic Art GIF Generator
 
 <img src="hank.gif" width="600">
 
@@ -23,7 +23,7 @@ Feel free to use this script anywhere
 Generated GIF will be under the file name `twerk.gif` in the same directory as the script
 
 ### Running the executable:
-    
+
 
 ### Building from source:
 `python main.py <path-to-image> <max-size=50>`

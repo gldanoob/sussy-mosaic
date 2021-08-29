@@ -30,7 +30,7 @@ def twerk(path, size):
     # Max 50 samples per dimension
     unit = int(max(width, height) // size + 1)
 
-    # Mosiac color array
+    # mosaic color array
     colors = [
         [
             pic.getpixel((x, y)) for x in range(0, width, unit)
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     args = sys.argv
     if len(args) == 1:
         sys.exit("""Among twerk mosaic art generator 
-(https://github.com/gldanoob/sussy-mosiac)
+(https://github.com/gldanoob/sussy-mosaic)
 
 Arguments
     <path-to-image>: required
