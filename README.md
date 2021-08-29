@@ -9,6 +9,7 @@ Feel free to use this script anywhere
 
 ## Features
 Supports transparent crewmates
+
 Custom limit of numbers of sussy baka in a row/colume
 
 ## Requirements
@@ -27,4 +28,5 @@ Example:
 `python main.py test/amog.png`
 
 Result:
+
 <img src="amog.gif" width="300">
