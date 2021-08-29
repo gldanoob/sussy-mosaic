@@ -20,7 +20,7 @@ Feel free to use this script anywhere
 
 ## Usage
 
-Generated GIF will be under the file name `twerk.gif` in the same directory as the script
+Generated GIF will be under the file name `twerk.gif` in the same directory
 
 ### Running the executable:
 `./twerk.exe <path-to-image> <max-size=50>`

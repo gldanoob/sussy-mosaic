@@ -7,7 +7,6 @@ def bundled_path(relative):
     try:
         base = sys._MEIPASS
     except Exception:
-        
         # Use default path if no tmp folder is created
         base = os.path.abspath(".")
     return os.path.join(base, relative)
