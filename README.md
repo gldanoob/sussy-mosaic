@@ -14,6 +14,9 @@ Feel free to use this script anywhere
 
 ## Requirements
 - Python 3 (optional) (For those intending to run the source)
+    run:
+    `pip install pillow`
+    `pip install numpy`
 
 ## Usage
 
