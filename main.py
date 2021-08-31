@@ -7,14 +7,14 @@ def bundled_path(relative):
     try:
         base = sys._MEIPASS
     except Exception:
+        
         # Use default path if no tmp folder is created
         base = os.path.abspath(".")
     return os.path.join(base, relative)
 
-# Function for changing transparency level to 0
-def trans(img):
+# Palette shifting
+def palette_shift(img, shift):
     p = img.getpalette()
-    shift = 1
     arr = (numpy.array(img) + shift) % 256
     dst = Image.fromarray(arr).convert('P')
     dst.putpalette(p[-3*shift:] + p[:-3*shift])
@@ -24,14 +24,16 @@ def twerk(path, size):
     if size is None: size = 50
 
     # Sussy frames & Output location
-    raw = bundled_path("assets/among_*.png")
-    out = "twerk.gif"
+    raw = bundled_path('assets/among_*.png')
+    out = 'twerk.gif'
 
     # Picture as mosaic pattern
     try:
-        pic = Image.open(path).convert("RGBA")
+        pic = Image.open(path).convert('RGBA')
     except:
         sys.exit(f"File not found or not an image: {path}")
+
+    print("Inspecting image...")
 
     width, height = pic.size
 
@@ -45,14 +47,14 @@ def twerk(path, size):
             pic.getpixel((x, y)) for x in range(unit // 2, width, unit)
         ] for y in range(unit // 2, height, unit)
     ]
-        
+
     # List of among twerk images
     among = [Image.open(f) for f in sorted(glob.glob(raw))]
 
     # Size (width) of tiles
     size, _ = among[0].size
 
-    mask = among[0].convert("RGBA")
+    mask = among[0].convert('RGBA')
 
     # Storage of frames
     sus = []
@@ -67,15 +69,15 @@ def twerk(path, size):
                 # Shading color of the ass
                 shade = tuple(v * 2 / 3 for v in bright[:-1]) + (bright[-1],)
                 
-                tile = among[(x + y - i) % len(among)].convert("RGBA")
+                tile = among[(x + y - i) % len(among)].convert('RGBA')
 
                 # Pixel array (r, g, b, a)
                 pixels = numpy.array(tile)
 
                 # Replace colors of imposter wif the given colors
                 r, g, b, a = pixels.T                
-                r_areas = (r == 197) & (g == 17) & (b == 17) & (a == 255)
-                pixels[...][r_areas.T] = bright
+                red_areas = (r == 197) & (g == 17) & (b == 17) & (a == 255)
+                pixels[...][red_areas.T] = bright
 
                 r, g, b, a = pixels.T
                 dark_areas = (r == 122) & (g == 8) & (b == 56) & (a == 255)
@@ -84,7 +86,14 @@ def twerk(path, size):
                 # Paste sussy baka onto frame
                 frame.paste(Image.fromarray(pixels), (size * x, size * y), mask)
 
-        sus.append(trans(frame.quantize(method=2)))
+        # Convert RGBA to Palette
+        frame = frame.quantize(method=2)
+
+        # Index of transparent in palette
+        trans = frame.getpixel((0, 0))
+        
+        # Shift transparent to index 0
+        sus.append(palette_shift(frame, -trans))
 
     print("Writing GIF...")
 
