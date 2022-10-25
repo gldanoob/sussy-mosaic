@@ -3,24 +3,24 @@
 <img src="hank.gif" width="600">
 
 Decided to make a more accessible version of https://github.com/ThatOneCalculator/Among-Us-Dumpy-Gif-Maker
-(Without downloading any requirements)
+(No requirements needed)
 
 Feel free to use this script anywhere
 
 ## Features
-- Supports transparent crewmates
+- Transparent crewmates
 
-- Custom limit of numbers of sussy baka in a row/colume
+- Custom limit of number of sussy bakas in a row/column
 
 ## Requirements
-- Python 3 (optional) (For those intending to run the source)
+- Python 3 (optional) (For those intending to run from the source)
     run:
     `pip install pillow`
     `pip install numpy`
 
 ## Usage
 
-Generated GIF will be under the file name `twerk.gif` in the same directory
+Generated GIF will be named `twerk.gif`
 
 ### Running the executable:
 `./twerk.exe <path-to-image> <max-size=50>`
